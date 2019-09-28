@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ICard } from '../models/cards-list';
+import { ICard } from '../../../../models/cards-listist';
 
 @Component({
   selector: 'app-card-item',
