@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ICard } from '../../../../models/cards-listist';
+import { Component, OnInit, Input } from '@angular/core';
+import { ICard } from '../../../../models/cards';
 
 @Component({
   selector: 'app-card-item',
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.scss']
 })
-export class CardItemComponent implements OnInit, ICard {
-  id: string;
-  name: string;
-  description: string;
+export class CardItemComponent implements OnInit {
+  @Input() card: ICard;
 
   constructor() { }
 

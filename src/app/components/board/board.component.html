@@ -1,1 +1,7 @@
-<app-card-list></app-card-list>
+<section class="card-lists">
+  <app-card-list
+    *ngFor="let cardList of cardsService.cardList"
+    [cardList]="cardList"
+  >
+  </app-card-list>
+</section>

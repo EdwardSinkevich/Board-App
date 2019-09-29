@@ -1,1 +1,6 @@
-<app-card-item></app-card-item>
+<p class="list-header">{{ cardList.name }}</p>
+<app-card-item
+  *ngFor="let card of cardList.cards"
+  [card]="card"
+  >
+</app-card-item>
