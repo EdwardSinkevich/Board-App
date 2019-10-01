@@ -2,6 +2,7 @@
 <app-card-item
   *ngFor="let card of cardList.cards | filter:searchText"
   [card]="card"
+  [isDone]="cardList.isDoneSection"
   (removeCardEvent)="removeCard($event)"
   >
 </app-card-item>

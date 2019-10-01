@@ -17,6 +17,8 @@ import { CardListComponent } from './components/board/card-list/card-list.compon
 import { CardItemComponent } from './components/board/card-list/card-item/card-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { StruckThroughDirective } from './directives/struck-through.directive';
+import { DueDateBackgroundDirective } from './directives/due-date-background.directive';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     CardItemComponent,
     FooterComponent,
     FilterPipe,
+    StruckThroughDirective,
+    DueDateBackgroundDirective,
   ],
   imports: [
     BrowserModule,

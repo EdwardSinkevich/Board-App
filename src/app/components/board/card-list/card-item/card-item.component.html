@@ -1,5 +1,11 @@
 <div class="expansion-panel">
-  <div #cardHeader class="expansion-panel-header" (click)="changePanelState()">
+  <div
+    #cardHeader
+    class="expansion-panel-header"
+    (click)="changePanelState()"
+    [appStruckThrough]="isDone"
+    [appDueDateBackground]="{ date: card.dueDate, isDone: isDone }"
+    >
     <span class="card-name">{{ card.name }}</span>
     <span #cardIndicator class="expansion-panel-indicator"></span>
   </div>

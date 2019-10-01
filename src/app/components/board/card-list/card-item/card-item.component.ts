@@ -9,6 +9,7 @@ import { ICard } from '../../../../models/cards';
 })
 export class CardItemComponent implements OnInit {
   @Input() public card: ICard;
+  @Input() public isDone: boolean;
   @Output() public removeCardEvent = new EventEmitter<string>();
   @ViewChild('cardContent', { static: false }) private cardContent : ElementRef;
   @ViewChild('cardIndicator', { static: false }) private cardIndicator : ElementRef;
@@ -29,12 +30,10 @@ export class CardItemComponent implements OnInit {
   public changePanelState() {
     if (this.cardContent.nativeElement.style.maxHeight !== "0px"){
       this.cardContent.nativeElement.style.maxHeight = 0;
-      this.cardHeader.nativeElement.style.background = null;
       this.cardIndicator.nativeElement.style.transform = 'rotate(0deg)';
     } else {
       this.cardContent.nativeElement.style.maxHeight = this.contentHeight;
       this.cardIndicator.nativeElement.style.transform = 'rotate(180deg)';
-      this.cardHeader.nativeElement.style.background = '#eeeeee';
     }
   }
 
