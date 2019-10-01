@@ -1,7 +1,10 @@
+<app-toolbar (searchEvent)="onSearch($event)"></app-toolbar>
 <section class="card-lists">
   <app-card-list
-    *ngFor="let cardList of cardsService.cardList"
+    *ngFor="let cardList of cardLists"
     [cardList]="cardList"
+    [searchText]="searchText"
+    (removeCardEvent)="removeCard($event)"
   >
   </app-card-list>
 </section>

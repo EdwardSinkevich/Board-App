@@ -1,6 +1,7 @@
 .card-lists {
-  max-width: 940px;
+  max-width: 1050px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
   margin: 0 auto;

@@ -1,1 +1,17 @@
-<p class="card-item">{{ card.name }}</p>
+<div class="expansion-panel">
+  <div #cardHeader class="expansion-panel-header" (click)="changePanelState()">
+    <span class="card-name">{{ card.name }}</span>
+    <span #cardIndicator class="expansion-panel-indicator"></span>
+  </div>
+  <div #cardContent class="expansion-panel-content">
+    <div class="expansion-panel-body">
+      <p><span>Description: </span><i>{{ card.description }}</i></p>
+      <p><span>Due Date: </span><i>{{ card.dueDate | date: 'mediumDate' }}</i></p>
+      <p><span>Assignee: </span><i>{{ card.assignee.firstName }} {{ card.assignee.lastName }}</i></p>
+      <div class="card-btns">
+        <button mat-raised-button >Edit</button>
+        <button mat-raised-button (click)="removeCard()" >Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

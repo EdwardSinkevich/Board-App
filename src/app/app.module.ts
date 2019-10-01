@@ -6,14 +6,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ToolbarComponent } from './components/board/toolbar/toolbar.component';
 import { BoardComponent } from './components/board/board.component';
 import { CardListComponent } from './components/board/card-list/card-list.component';
 import { CardItemComponent } from './components/board/card-list/card-item/card-item.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { FooterComponent } from './components/footer/footer.component';
     CardListComponent,
     CardItemComponent,
     FooterComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    FormsModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

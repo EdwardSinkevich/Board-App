@@ -17,8 +17,8 @@ export class CardsService {
           dueDate: new Date(),
           assignee: {
             id: '1',
-            firstName: 'User 1',
-            lastName: 'User 1',
+            firstName: 'FirstName 1',
+            lastName: 'LastName 1',
           }
         },
         {
@@ -28,8 +28,8 @@ export class CardsService {
           dueDate: new Date(),
           assignee: {
             id: '1',
-            firstName: 'User 1',
-            lastName: 'User 1',
+            firstName: 'FirstName 1',
+            lastName: 'LastName 1',
           }
         },
         {
@@ -39,8 +39,8 @@ export class CardsService {
           dueDate: new Date(),
           assignee: {
             id: '1',
-            firstName: 'User 1',
-            lastName: 'User 1',
+            firstName: 'FirstName 1',
+            lastName: 'LastName 1',
           }
         }
       ],
@@ -52,13 +52,13 @@ export class CardsService {
       cards: [
         {
           id: '4',
-          name: 'Task 4',
-          description: 'Task 4 description',
+          name: 'Task 4 Test Long Long Long Long Name',
+          description: 'Task 4 Test Long Long Long Long description',
           dueDate: new Date(),
           assignee: {
             id: '1',
-            firstName: 'User 1',
-            lastName: 'User 1',
+            firstName: 'FirstName 2',
+            lastName: 'LastName 2',
           }
         },
         {
@@ -68,8 +68,8 @@ export class CardsService {
           dueDate: new Date(),
           assignee: {
             id: '1',
-            firstName: 'User 1',
-            lastName: 'User 1',
+            firstName: 'FirstName 2',
+            lastName: 'LastName 2',
           }
         },
         {
@@ -79,8 +79,8 @@ export class CardsService {
           dueDate: new Date(),
           assignee: {
             id: '1',
-            firstName: 'User 1',
-            lastName: 'User 1',
+            firstName: 'FirstName 2',
+            lastName: 'LastName 2',
           }
         }
       ],
@@ -97,8 +97,8 @@ export class CardsService {
           dueDate: new Date(),
           assignee: {
             id: '1',
-            firstName: 'User 1',
-            lastName: 'User 1',
+            firstName: 'FirstName 3',
+            lastName: 'LastName 3',
           }
         },
         {
@@ -108,8 +108,8 @@ export class CardsService {
           dueDate: new Date(),
           assignee: {
             id: '1',
-            firstName: 'User 1',
-            lastName: 'User 1',
+            firstName: 'FirstName 3',
+            lastName: 'LastName 3',
           }
         },
         {
@@ -119,8 +119,8 @@ export class CardsService {
           dueDate: new Date(),
           assignee: {
             id: '1',
-            firstName: 'User 1',
-            lastName: 'User 1',
+            firstName: 'FirstName 3',
+            lastName: 'LastName 3',
           }
         }
       ],
@@ -129,4 +129,9 @@ export class CardsService {
   ];
 
   constructor() { }
+
+  removeCard(listWithCard) {
+    const index = listWithCard.cardList.cards.findIndex((item) => item.id === listWithCard.id);
+    listWithCard.cardList.cards.splice(index, 1);
+  }
 }

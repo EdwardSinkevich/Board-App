@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ICardList } from '../../../models/cards'
 
 @Component({
@@ -8,10 +8,18 @@ import { ICardList } from '../../../models/cards'
 })
 export class CardListComponent implements OnInit {
   @Input() cardList: ICardList;
+  @Input() searchText: string;
+  @Output() removeCardEvent = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  removeCard(id: string) {
+    this.removeCardEvent.emit({
+      cardList: this.cardList,
+      id: id,
+    });
+  }
 }

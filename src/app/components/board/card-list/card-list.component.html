@@ -1,6 +1,7 @@
 <p class="list-header">{{ cardList.name }}</p>
 <app-card-item
-  *ngFor="let card of cardList.cards"
+  *ngFor="let card of cardList.cards | filter:searchText"
   [card]="card"
+  (removeCardEvent)="removeCard($event)"
   >
 </app-card-item>
