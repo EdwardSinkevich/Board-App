@@ -15,6 +15,11 @@ export class ToolbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  public clearSearchField() {
+    this.searchText = '';
+    this.onSearch();
+  }
+
   public onSearch() {
     this.searchEvent.emit(this.searchText);
   }
