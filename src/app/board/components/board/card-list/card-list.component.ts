@@ -19,7 +19,7 @@ export class CardListComponent implements OnInit {
   removeCard(id: string) {
     this.removeCardEvent.emit({
       cardList: this.cardList,
-      id: id,
+      id,
     });
   }
 }

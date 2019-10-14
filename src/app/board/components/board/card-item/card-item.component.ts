@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
-import { ICard } from '../../../../models/cards';
+import { ICard } from '../../../models/cards';
 
 @Component({
   selector: 'app-card-item',

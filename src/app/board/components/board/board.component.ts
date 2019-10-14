@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CardsService } from 'src/app/services/cards.service';
-import { ICardList } from 'src/app/models/cards';
+import { ICardList } from 'src/app/board/models/cards';
+import { CardsService } from '../../services/cards.service';
 
 @Component({
   selector: 'app-board',

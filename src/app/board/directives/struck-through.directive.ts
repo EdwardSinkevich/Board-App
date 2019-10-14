@@ -14,7 +14,7 @@ export class StruckThroughDirective {
 
   private struckThroughCard() {
     if (this.isDone) {
-      this.renderer2.setStyle(this.elementRef.nativeElement, 'text-decoration', 'line-through')
+      this.renderer2.setStyle(this.elementRef.nativeElement, 'text-decoration', 'line-through');
     }
   }
 }
