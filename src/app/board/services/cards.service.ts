@@ -128,7 +128,7 @@ export class CardsService {
 
   constructor() { }
 
-  removeCard(listWithCard) {
+  public removeCard(listWithCard) {
     const index = listWithCard.cardList.cards.findIndex((item) => item.id === listWithCard.id);
     listWithCard.cardList.cards.splice(index, 1);
   }

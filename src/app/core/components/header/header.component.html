@@ -1,8 +1,15 @@
 <nav>
-  <a href="/" mat-button>
+  <a routerLink="/" routerLinkActive="active" mat-button>
     <span>LOGO</span>
   </a>
-  <a href="#" mat-button>
-    <span>Log in</span>
-  </a>
+  <div>
+    <a *ngIf="!loginService.userInfo; else logoutBtn" mat-button>
+      <span>Log in</span>
+    </a>
+    <ng-template #logoutBtn>
+      <a mat-button (click)="logOut()">
+        <span>Log out</span>
+      </a>
+    </ng-template>
+  </div>
 </nav>
