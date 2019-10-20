@@ -11,7 +11,7 @@ export class BoardComponent {
   public searchText: string;
   public cardLists: ICardList[];
 
-  constructor(public cardsService: CardsService) {
+  constructor(private cardsService: CardsService) {
     this.cardLists = cardsService.cardList;
   }
 

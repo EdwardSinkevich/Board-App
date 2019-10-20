@@ -24,7 +24,7 @@ export class LoginFormComponent implements OnInit {
 
   public submit() {
     if (this.loginForm.valid) {
-      this.authService.setUserInfo(this.loginForm.value.username, this.loginForm.value.password);
+      this.authService.login(this.loginForm.value.username, this.loginForm.value.password);
       this.router.navigate(['/board']);
     } else {
       this.errorMessage = 'Username or password invalid';

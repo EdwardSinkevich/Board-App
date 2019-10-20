@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ICardList } from '../models/cards';
+import { IUser } from '../models/user';
 
 @Injectable()
 export class CardsService {
@@ -54,7 +55,7 @@ export class CardsService {
           description: 'Task 4 Test Long Long Long Long description',
           dueDate: new Date(Date.now() + -3 * 24 * 3600 * 1000),
           assignee: {
-            id: '1',
+            id: '2',
             firstName: 'FirstName 2',
             lastName: 'LastName 2',
           }
@@ -65,7 +66,7 @@ export class CardsService {
           description: 'Task 5 description',
           dueDate: new Date(Date.now() + -3 * 24 * 3600 * 1000),
           assignee: {
-            id: '1',
+            id: '2',
             firstName: 'FirstName 2',
             lastName: 'LastName 2',
           }
@@ -76,7 +77,7 @@ export class CardsService {
           description: 'Task 6 description',
           dueDate: new Date(Date.now() + -7 * 24 * 3600 * 1000),
           assignee: {
-            id: '1',
+            id: '2',
             firstName: 'FirstName 2',
             lastName: 'LastName 2',
           }
@@ -94,7 +95,7 @@ export class CardsService {
           description: 'Task 7 description',
           dueDate: new Date(Date.now() + -10 * 24 * 3600 * 1000),
           assignee: {
-            id: '1',
+            id: '3',
             firstName: 'FirstName 3',
             lastName: 'LastName 3',
           }
@@ -105,7 +106,7 @@ export class CardsService {
           description: 'Task 8 description',
           dueDate: new Date(Date.now() + -17 * 24 * 3600 * 1000),
           assignee: {
-            id: '1',
+            id: '3',
             firstName: 'FirstName 3',
             lastName: 'LastName 3',
           }
@@ -116,7 +117,7 @@ export class CardsService {
           description: 'Task 9 description',
           dueDate: new Date(Date.now() + -2 * 24 * 3600 * 1000),
           assignee: {
-            id: '1',
+            id: '3',
             firstName: 'FirstName 3',
             lastName: 'LastName 3',
           }
@@ -131,5 +132,22 @@ export class CardsService {
   public removeCard(listWithCard) {
     const index = listWithCard.cardList.cards.findIndex((item) => item.id === listWithCard.id);
     listWithCard.cardList.cards.splice(index, 1);
+  }
+
+  public getUsers(): IUser[] {
+    const users = new Map();
+    this.cardList.forEach(listItem => {
+      listItem.cards.forEach(cardItem => {
+        users.set(cardItem.assignee.id, cardItem.assignee);
+      });
+    });
+    return Array.from(users.values());
+  }
+
+  public addCard(cardItem) {
+    const backlog = this.cardList.find(item => item.name === 'Backlog');
+    const cardId = backlog.cards.length + 1;
+    cardItem.id = cardId.toString();
+    backlog.cards.push(cardItem);
   }
 }

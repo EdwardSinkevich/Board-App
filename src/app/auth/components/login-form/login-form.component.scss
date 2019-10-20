@@ -4,6 +4,11 @@
   margin: 100px 0px;
 }
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .mat-form-field {
   width: 100%;
   min-width: 300px;
@@ -22,7 +27,6 @@ mat-card-content {
   background-color: red;
 }
 
-.button {
-  display: flex;
-  justify-content: flex-end;
+.login-btn {
+  align-self: flex-end;
 }

@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatToolbarModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatCardModule,
 } from '@angular/material';
 
 import { BoardPageComponent } from './pages/board-page/board-page.component';
@@ -22,6 +28,7 @@ import { StruckThroughDirective } from './directives/struck-through.directive';
 import { DueDateBackgroundDirective } from './directives/due-date-background.directive';
 import { CreateTaskPageComponent } from './pages/create-task-page/create-task-page.component';
 import { EditTaskPageComponent } from './pages/edit-task-page/edit-task-page.component';
+import { CardFormComponent } from './components/card-form/card-form.component';
 
 
 @NgModule({
@@ -36,6 +43,7 @@ import { EditTaskPageComponent } from './pages/edit-task-page/edit-task-page.com
     DueDateBackgroundDirective,
     CreateTaskPageComponent,
     EditTaskPageComponent,
+    CardFormComponent,
   ],
   imports: [
     CommonModule,
@@ -47,6 +55,12 @@ import { EditTaskPageComponent } from './pages/edit-task-page/edit-task-page.com
     MatInputModule,
     FormsModule,
     MatExpansionModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatCardModule,
   ],
   providers: [
     CardsService,

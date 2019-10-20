@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
+import { LoginService } from 'src/app/core/services/login.service';
 
 @Injectable()
 export class AuthService {
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
-  setUserInfo(name: string, password: string) {
-    const userInfo = {
-      name,
-      password,
-    };
-
-    localStorage.setItem('userInfo', JSON.stringify(userInfo));
+  public login(userName: string, password: string) {
+    this.loginService.setUserInfo(userName, password);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, Output, EventEmitter, AfterViewInit } from '@angular/core';
 
 import { ICard } from '../../../models/cards';
 
@@ -7,20 +7,14 @@ import { ICard } from '../../../models/cards';
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.scss'],
 })
-export class CardItemComponent implements OnInit {
+export class CardItemComponent implements AfterViewInit {
   @Input() public card: ICard;
   @Input() public isDone: boolean;
   @Output() public removeCardEvent = new EventEmitter<string>();
-  @ViewChild('cardContent', { static: false }) private cardContent : ElementRef;
-  @ViewChild('cardIndicator', { static: false }) private cardIndicator : ElementRef;
-  @ViewChild('cardHeader', { static: false }) private cardHeader : ElementRef;
+  @ViewChild('cardContent', { static: false }) private cardContent: ElementRef;
+  @ViewChild('cardIndicator', { static: false }) private cardIndicator: ElementRef;
 
   public contentHeight: string;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   ngAfterViewInit(): void {
     this.contentHeight = this.cardContent.nativeElement.scrollHeight + 'px';
@@ -28,7 +22,7 @@ export class CardItemComponent implements OnInit {
   }
 
   public changePanelState() {
-    if (this.cardContent.nativeElement.style.maxHeight !== "0px"){
+    if (this.cardContent.nativeElement.style.maxHeight !== '0px') {
       this.cardContent.nativeElement.style.maxHeight = 0;
       this.cardIndicator.nativeElement.style.transform = 'rotate(0deg)';
     } else {

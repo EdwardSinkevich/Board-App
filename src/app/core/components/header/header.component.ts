@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 
@@ -9,7 +9,7 @@ import { LoginService } from '../../services/login.service';
 })
 export class HeaderComponent {
 
-  constructor(public router: Router, public loginService: LoginService) { }
+  constructor(private router: Router, public loginService: LoginService) { }
 
   public logOut() {
     this.loginService.removeUserInfo();

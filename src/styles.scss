@@ -7,4 +7,11 @@
   outline: 0;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-width: 360px;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-weight: 400; min-width: 410px;}
+
+
+.btn {
+  background: #673ab7;
+  color: #ffffff;
+  font-weight: 400;
+}
