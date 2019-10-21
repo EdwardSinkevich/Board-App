@@ -12,7 +12,7 @@
       </mat-form-field>
       <h4>Assignee</h4>
       <mat-form-field>
-        <mat-select placeholder="Select user" formControlName="assignee">
+        <mat-select placeholder="Select user" formControlName="assignee" >
           <mat-option *ngFor="let user of usersData" [value]="user">
             {{ user.firstName }}
           </mat-option>

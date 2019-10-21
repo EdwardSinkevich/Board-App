@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ICardList } from '../models/cards';
+import { ICardList, ICard } from '../models/cards';
 import { IUser } from '../models/user';
 
 @Injectable()
@@ -144,10 +144,30 @@ export class CardsService {
     return Array.from(users.values());
   }
 
-  public addCard(cardItem) {
-    const backlog = this.cardList.find(item => item.name === 'Backlog');
-    const cardId = backlog.cards.length + 1;
-    cardItem.id = cardId.toString();
-    backlog.cards.push(cardItem);
+  public addCard(cardData) {
+    const backlogList = this.cardList.find(item => item.name === 'Backlog');
+    const nextCardId = backlogList.cards.length + 1;
+    cardData.id = nextCardId.toString();
+    backlogList.cards.push(cardData);
   }
+
+  public getCardData(routeParams) {
+    let card: ICard;
+    for (const list of this.cardList) {
+      if (list.id === routeParams.listId) {
+        card = list.cards.find(item => item.id === routeParams.cardId);
+        break;
+      }
+    }
+    return card;
+  }
+
+  public editCard(cardData: ICard, routeParams) {
+    const card = this.getCardData(routeParams);
+    card.name = cardData.name;
+    card.description = cardData.description;
+    card.dueDate = cardData.dueDate;
+    card.assignee = cardData.assignee;
+  }
+
 }

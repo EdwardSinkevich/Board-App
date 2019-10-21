@@ -20,6 +20,9 @@ export class CardListComponent {
   }
 
   editCard(id: string) {
-    this.editCardEvent.emit(id);
+    this.editCardEvent.emit({
+      cardListId: this.cardList.id,
+      id,
+    });
   }
 }

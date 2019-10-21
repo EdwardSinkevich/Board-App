@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-task-page',
@@ -8,10 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditTaskPageComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  public minDate = new Date();
+  public routeParams;
 
-  ngOnInit() {
-    console.log(this.activatedRoute.snapshot.params.id);
+  constructor( private activatedRoute: ActivatedRoute ) {}
+
+  ngOnInit(): void {
+    this.routeParams = {
+      listId: this.activatedRoute.snapshot.params.listId,
+      cardId: this.activatedRoute.snapshot.params.cardId
+    };
   }
-
 }

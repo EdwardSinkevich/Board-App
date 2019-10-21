@@ -28,7 +28,7 @@ export class BoardComponent {
     this.cardsService.removeCard(listWithCard);
   }
 
-  public editCard(id: string) {
-    this.router.navigate(['edit-task', id], { relativeTo: this.activatedRoute });
+  public editCard(listWithCard) {
+    this.router.navigate(['edit-task', listWithCard.cardListId, listWithCard.id], { relativeTo: this.activatedRoute });
   }
 }

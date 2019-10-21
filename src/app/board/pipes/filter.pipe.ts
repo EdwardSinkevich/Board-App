@@ -7,9 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(value: any[], criterion: string): any[] {
-    return criterion ?
-      value.filter(item => item.name.toUpperCase().startsWith(criterion.toUpperCase())):
-      value;
+    return criterion ? value.filter(item => item.name.toUpperCase().startsWith(criterion.toUpperCase())) : value;
   }
 
 }
