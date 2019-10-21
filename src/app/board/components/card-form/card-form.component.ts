@@ -17,7 +17,7 @@ export class CardFormComponent implements OnInit {
   constructor(
     private cardsService: CardsService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {

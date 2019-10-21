@@ -11,6 +11,7 @@ export class CardItemComponent implements AfterViewInit {
   @Input() public card: ICard;
   @Input() public isDone: boolean;
   @Output() public removeCardEvent = new EventEmitter<string>();
+  @Output() public editCardEvent = new EventEmitter<string>();
   @ViewChild('cardContent', { static: false }) private cardContent: ElementRef;
   @ViewChild('cardIndicator', { static: false }) private cardIndicator: ElementRef;
 
@@ -33,5 +34,9 @@ export class CardItemComponent implements AfterViewInit {
 
   public removeCard() {
     this.removeCardEvent.emit(this.card.id);
+  }
+
+  public editCard() {
+    this.editCardEvent.emit(this.card.id);
   }
 }

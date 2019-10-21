@@ -10,11 +10,16 @@ export class CardListComponent {
   @Input() cardList: ICardList;
   @Input() searchText: string;
   @Output() removeCardEvent = new EventEmitter();
+  @Output() editCardEvent = new EventEmitter();
 
   removeCard(id: string) {
     this.removeCardEvent.emit({
       cardList: this.cardList,
       id,
     });
+  }
+
+  editCard(id: string) {
+    this.editCardEvent.emit(id);
   }
 }
